@@ -22,6 +22,7 @@ I used these services and tools to build SpeakEasy AI:
 
 ## 🚀 How I Set It Up (And How You Can Too!)
 
+
 ### 1. Get the Code
 ```bash
 git clone <your-repo> # or download my files
@@ -52,7 +53,12 @@ gcloud config set project YOUR_PROJECT_ID
 
 ### 3. Configure Your Setup
 
-I made it super easy - just edit `quick_deploy.sh` with your details:
+I made it super easy - just copy the template and add your details:
+```bash
+cp quick_deploy.sh.example quick_deploy.sh
+```
+
+Then edit `quick_deploy.sh` with your details:
 ```bash
 # Your project details
 PROJECT_ID="your-project-id"
@@ -231,5 +237,4 @@ I wanted to create something that shows how powerful voice AI can be when done r
 The best part? Once it's set up, it just works. People can call and have meaningful conversations that get automatically saved for later review.
 
 *Feel free to fork, modify, and make it your own! If you build something cool with it, I'd love to hear about it.* 
-
 ---
