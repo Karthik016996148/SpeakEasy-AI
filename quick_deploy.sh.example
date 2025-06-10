@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# SpeakEasy AI - Quick Deploy Script Template
+# Copy this file to quick_deploy.sh and fill in your actual values
+
+# Your project details - UPDATE THESE
+PROJECT_ID="your-project-id"
+REGION="us-west2"
+BUCKET_NAME="your-bucket-name"
+SERVICE_NAME="voice-agent"
+
+# Your credentials - REPLACE WITH YOUR ACTUAL VALUES
+OPENAI_API_KEY="sk-proj-your-actual-openai-key-here"
+TWILIO_ACCOUNT_SID="AC-your-twilio-account-sid-here"
+TWILIO_AUTH_TOKEN="your-twilio-auth-token-here"
+
+echo "🚀 Deploying SpeakEasy AI to Google Cloud..."
+
+# Set the project
+gcloud config set project $PROJECT_ID
+
+# Create bucket if it doesn't exist
+echo "📦 Creating GCS bucket..."
+gsutil mb -p $PROJECT_ID -c STANDARD -l $REGION gs://$BUCKET_NAME 2>/dev/null || echo "Bucket already exists"
+
+# Build and deploy
+echo "🔨 Building and deploying to Cloud Run..."
+gcloud run deploy $SERVICE_NAME \
+    --source . \
+    --platform managed \
+    --region $REGION \
+    --allow-unauthenticated \
+    --set-env-vars="OPENAI_API_KEY=$OPENAI_API_KEY,TWILIO_ACCOUNT_SID=$TWILIO_ACCOUNT_SID,TWILIO_AUTH_TOKEN=$TWILIO_AUTH_TOKEN,GCS_BUCKET=$BUCKET_NAME,GOOGLE_CLOUD_PROJECT=$PROJECT_ID"
+
+# Get the service URL
+SERVICE_URL=$(gcloud run services describe $SERVICE_NAME --platform managed --region $REGION --format 'value(status.url)')
+
+echo "✅ Deployment complete!"
+echo "🔗 Service URL: $SERVICE_URL"
+echo "📱 Configure Twilio webhook: $SERVICE_URL/twilio/webhook"
+echo "📋 Configure status callback: $SERVICE_URL/twilio/call_status" 
