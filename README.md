@@ -230,8 +230,6 @@ I wanted to create something that shows how powerful voice AI can be when done r
 
 The best part? Once it's set up, it just works. People can call and have meaningful conversations that get automatically saved for later review.
 
----
-
-**Built with ❤️ by me using OpenAI, Twilio, and Google Cloud Platform**
-
 *Feel free to fork, modify, and make it your own! If you build something cool with it, I'd love to hear about it.* 
+
+---
