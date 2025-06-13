@@ -1,4 +1,4 @@
-# SpeakEasy AI 🗣️
+# VoiceMate AI 🗣️
 
 Hey there! I built this conversational voice AI agent that lets people call a phone number and have natural conversations with an AI assistant. It's powered by OpenAI GPT-4o-mini, Twilio, and deployed on Google Cloud Platform. The coolest part? It remembers the entire conversation context and automatically saves complete transcripts!
 
