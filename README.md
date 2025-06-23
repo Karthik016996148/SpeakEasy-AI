@@ -232,7 +232,7 @@ Here's what I spend running this (very reasonable!):
 
 ## 🎉 Why I Built This
 
-I wanted to create something that shows how powerful voice AI can be when done right. SpeakEasy AI demonstrates natural conversation flow, context awareness, and automatic transcription - perfect for customer service, personal assistants, or any voice-enabled application you can imagine.
+I wanted to create something that shows how powerful voice AI can be when done right. VoiceMate AI demonstrates natural conversation flow, context awareness, and automatic transcription - perfect for customer service, personal assistants, or any voice-enabled application you can imagine.
 
 The best part? Once it's set up, it just works. People can call and have meaningful conversations that get automatically saved for later review.
 
