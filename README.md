@@ -12,7 +12,7 @@ Hey there! I built this conversational voice AI agent that lets people call a ph
 
 ## 📋 What You'll Need
 
-I used these services and tools to build SpeakEasy AI:
+I used these services and tools to build VoiceMate AI:
 
 - Google Cloud Platform account
 - Twilio account with phone number
